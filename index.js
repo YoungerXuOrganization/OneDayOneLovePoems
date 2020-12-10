@@ -11,7 +11,7 @@ const nodemailer = require("nodemailer");
 async function sendMail(text) {
     var user = "Younger.Xu@outlook.com";//自己的邮箱
     var pass = "qwerty369."; //qq邮箱授权码,如何获取授权码下面有讲
-    var to = "596356456@qq.com";//对方的邮箱
+    var to = "1247994335@qq.com";//对方的邮箱
     let transporter = nodemailer.createTransport({
         host: "smtp-mail.outlook.com", // hostname
         secureConnection: false, // TLS requires secureConnection to be false
