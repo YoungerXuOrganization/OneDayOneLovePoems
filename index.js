@@ -1,3 +1,11 @@
+const { default: Axios } = require("axios");
+function getHoneyedWords() {
+    var url = "https://chp.shadiao.app/api.php";
+    //获取这个接口的信息
+    var pph= Axios.get(url);
+    return pph;
+}
+
 const nodemailer = require("nodemailer");
 // 发送邮件函数
 async function sendMail(text) {
@@ -24,5 +32,12 @@ async function sendMail(text) {
     console.log("发送成功");
 }
 
+
+getHoneyedWords().then(res=>{
+    console.log(res.data)
+  //发送邮件
+    sendMail(res.data);
+})
+
 //测试一下
-sendMail('你好老婆')
+//sendMail('你好老婆')
