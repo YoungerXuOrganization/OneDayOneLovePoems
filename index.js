@@ -9,9 +9,9 @@ function getHoneyedWords() {
 const nodemailer = require("nodemailer");
 // 发送邮件函数
 async function sendMail(text) {
-    var user = "Younger.Xu@outlook.com";//自己的邮箱
-    var pass = "qwerty369."; //qq邮箱授权码,如何获取授权码下面有讲
-    var to = "1247994335@qq.com";//对方的邮箱
+    var user = process.env.Account;//自己的邮箱
+    var pass = process.env.Pwd; //qq邮箱授权码,如何获取授权码下面有讲
+    var to = process.env.To;//对方的邮箱
     let transporter = nodemailer.createTransport({
         host: "smtp-mail.outlook.com", // hostname
         secureConnection: false, // TLS requires secureConnection to be false
@@ -29,7 +29,7 @@ async function sendMail(text) {
         subject: "亲爱的老婆", // Subject line
         text: text, // plain text body
     });
-    console.log("发送成功");
+    console.log("发送成功:"+text);
 }
 
 
