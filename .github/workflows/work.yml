@@ -16,4 +16,8 @@ jobs:
                 node-version: '12.x'
             - name: Run app
               run: npm install
-            - run: node index.js
+            - run: node index.js 
+              env:
+                Account: ${{ secrets.Account }}
+                Pwd: ${{ secrets.Pwd }}
+                To: ${{ secrets.To}}
