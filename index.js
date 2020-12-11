@@ -24,10 +24,10 @@ async function sendMail(text) {
         },
     });
     let info = await transporter.sendMail({
-        from: `亲爱的老公<${user}>`, // sender address
+        from: `杨哥<${user}>`, // sender address
         to: `亲爱的老婆<${to}>`, // list of receivers
-        subject: "亲爱的老婆", // Subject line
-        text: text, // plain text body
+        subject: text, // Subject line
+        //text: text, // plain text body
     });
     console.log("发送成功:"+text);
 }
