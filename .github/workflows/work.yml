@@ -1,6 +1,9 @@
 name: Github ODOL Schedule
 
 on:
+    push:
+        branches:
+            - master
     schedule:
         - cron: '5 0 * * *'
 jobs:
